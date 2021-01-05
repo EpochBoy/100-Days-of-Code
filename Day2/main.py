@@ -52,3 +52,28 @@
 
 # print(3*(3+3)/3-3)
 
+#Rounding
+
+# print(8/3)
+
+# #Just cuts off the decimals
+# print(int(8/3))
+
+# #Respects .4 - .5 math rule
+# print(round(8/3))
+
+# #Rounding to a decimal point
+# print(round(8/3, 2))
+
+# Floor Division, automatically converts to an integer
+# print(8//3)
+
+#Shorthands += -= *= /=
+
+#f-String
+score=4
+height = 1.87
+isWinning = True
+
+print(f"your score is {score} and your height is {height} and your are winning? {isWinning}")
+
