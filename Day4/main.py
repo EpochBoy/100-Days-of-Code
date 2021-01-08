@@ -17,16 +17,24 @@
 
 # Python Lists - Data Structures
 
-usa = ["Delware", "Pennsylvania", "Seattle"]
+# usa = ["Delware", "Pennsylvania", "Seattle"]
 
-print(usa[2])
-print(usa[-1])
-usa[2] = "FormerSeattle"
-print(usa[2])
-print(usa[-1])
-usa.append("TrumpTown")
-print(usa[3])
-usa.extend(["PelosiTown","BidenTown"])
-print(usa)
+# print(usa[2])
+# print(usa[-1])
+# usa[2] = "FormerSeattle"
+# print(usa[2])
+# print(usa[-1])
+# usa.append("TrumpTown")
+# print(usa[3])
+# usa.extend(["PelosiTown","BidenTown"])
+# print(usa)
+
+
+# Nested Lists
+
+fruits = ["nectarines", "apples", "oranges"]
+vegetables = ["spinach", "kale", "celery"]
+
+dirty_greens = [fruits, vegetables]
 
 
