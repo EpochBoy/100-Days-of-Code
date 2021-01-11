@@ -6,3 +6,8 @@ for fruit in fruits:
     if fruit == "Peach":
         print("but yes")
 
+total = 0
+for number in range(1,101):
+    total += number
+
+print(total)
