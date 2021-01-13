@@ -22,8 +22,8 @@ display = []
 #     display += "_"
 
 #or facit2
-world_length  = len(chosen_word)
-for _ in range(world_length):
+word_length  = len(chosen_word)
+for _ in range(word_length):
     display += "_"
 
 #TODO-2: - Loop through each position in the chosen_word;
@@ -41,7 +41,7 @@ for _ in range(world_length):
 
 #facit
 
-for position in range(world_length):
+for position in range(word_length):
     letter = chosen_word[position]
     if letter == guess:
         display[position] = letter
