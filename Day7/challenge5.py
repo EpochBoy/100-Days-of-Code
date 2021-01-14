@@ -3,6 +3,7 @@
 import random
 import hangman_art
 import hangman_words
+import os
 
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 #Delete this line: word_list = ["ardvark", "baboon", "camel"]
@@ -13,6 +14,9 @@ end_of_game = False
 lives = 6
 
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+
+def cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 #Testing code
 print(hangman_art.logo+"\n")
@@ -25,10 +29,11 @@ for _ in range(word_length):
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
+    cls()
 
     #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
     if guess in display:
-        print(f"\nYou already guessed {guess}\n")
+        print(f"\nYou already guessed \"{guess}\"")
 
     #Check guessed letter
     for position in range(word_length):
