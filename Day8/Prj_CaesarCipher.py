@@ -1,63 +1,93 @@
-#added alphabet twice to list to avoid index out of bounds
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
+#TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar(). 
 
-def encrypt(plain_text, shift_amount):
-    cipher_text = ""
-    for letter in plain_text:
+
+def caesar(text, shift, direction):
+    msg = ""
+    for letter in text:
         position = alphabet.index(letter)
-        new_position = position + shift_amount
-        new_letter = alphabet[new_position]
-        cipher_text += new_letter
-    print(f"The encoded text is {cipher_text}")
+        if direction == "encode":
+            new_position = position+shift
+            msg += alphabet[new_position]
+        elif direction == "decode":
+            new_position = position-shift
+            msg += alphabet[new_position]
+    if direction == "encode":
+        print(f"The encoded text is {msg}")
+    if direction == "decode":
+        print(f"The decoded  text is {msg}")
 
+#facit
 
+def caesar2(start_text, shift_amount, cipher_direction):
+  end_text = ""
+  if cipher_direction == "decode":
+      shift_amount *= -1
+  for letter in start_text:
+    position = alphabet.index(letter)
+    new_position = position + shift_amount
+    end_text += alphabet[new_position]
+  print(f"Here's the {direction}d result: {end_text}")
+#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
 
-
-#TODO-1: Create a different function called 'decrypt' that takes the 'text' and 'shift' as inputs.
-
-
-  #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.  
-  #e.g. 
-  #cipher_text = "mjqqt"
-  #shift = 5
-  #plain_text = "hello"
-  #print output: "The decoded text is hello"
-
-
-def decrypt(enc_text, rev_shift):
-    dec_text = ""
-    for letter in enc_text:
-        position = alphabet.index(letter)
-        new_position = position-rev_shift
-        new_letter = alphabet[new_position]
-        dec_text += new_letter
-    print(f"The decoded text is {dec_text}")
-
-
-#TODO-3: Check if the user wanted to encrypt or decrypt the message by checking the 'direction' variable. Then call the correct function based on that 'direction' variable. You should be able to test the code to encrypt *AND* decrypt a message.
-
-if direction == "encode":
-    encrypt(plain_text=text, shift_amount=shift)
-elif direction == "decode":
-    decrypt(enc_text=text, rev_shift=shift)
-else:
-    print("Incorrect input")
+caesar(text, shift, direction)
+caesar2(text, shift, direction)
 
 
 
 
 
+# #added alphabet twice to list to avoid index out of bounds
+# alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
 
 
+# def encrypt(plain_text, shift_amount):
+#     cipher_text = ""
+#     for letter in plain_text:
+#         position = alphabet.index(letter)
+#         new_position = position + shift_amount
+#         new_letter = alphabet[new_position]
+#         cipher_text += new_letter
+#     print(f"The encoded text is {cipher_text}")
+
+# #TODO-1: Create a different function called 'decrypt' that takes the 'text' and 'shift' as inputs.
 
 
+#   #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.  
+#   #e.g. 
+#   #cipher_text = "mjqqt"
+#   #shift = 5
+#   #plain_text = "hello"
+#   #print output: "The decoded text is hello"
 
 
+# def decrypt(enc_text, rev_shift):
+#     dec_text = ""
+#     for letter in enc_text:
+#         position = alphabet.index(letter)
+#         new_position = position-rev_shift
+#         new_letter = alphabet[new_position]
+#         dec_text += new_letter
+#     print(f"The decoded text is {dec_text}")
+
+
+# #TODO-3: Check if the user wanted to encrypt or decrypt the message by checking the 'direction' variable. Then call the correct function based on that 'direction' variable. You should be able to test the code to encrypt *AND* decrypt a message.
+
+# if direction == "encode":
+#     encrypt(plain_text=text, shift_amount=shift)
+# elif direction == "decode":
+#     decrypt(enc_text=text, rev_shift=shift)
+# else:
+#     print("Incorrect input")
 
 
 
