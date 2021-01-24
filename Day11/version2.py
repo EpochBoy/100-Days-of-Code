@@ -5,8 +5,6 @@ from art import logo
 #infinite deck
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-#Game Status
-
 #card picker
 def pick_card():
     card_amount = len(cards)
@@ -74,7 +72,6 @@ def check_winner(player_hand, dealer_hand, game_state):
         print("Congratulations you won!")    
     game_state = start_game()
     return game_state
-
 
 def blackjack():
     print(logo)
