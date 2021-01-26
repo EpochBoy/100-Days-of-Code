@@ -37,13 +37,13 @@ game_state = True
 def runner(logo, vs, game_state):
     score = 0
     while game_state == True:
-        name1, followers1, description1, country1 = picker()
         name2, followers2, description2, country2 = picker()
+        name1, followers1, description1, country1 = picker()
         while name1 == name2:
             name2, followers2, description2, country2 = picker()
         printer(name1, name2, description1, description2, country1, country2, logo, vs)
         choice = choose(followers1, followers2)
-        if choice == True and followers1 == followers1:
+        if choice == True and followers1 == followers2:
             cls()
             print(f"They both have the same amount of followers")
         elif choice == True and followers1 != followers2:
@@ -52,7 +52,7 @@ def runner(logo, vs, game_state):
             print(f"You're right! Current score: {score}")
         elif choice == False:
             cls()
-            print(f"Sorry you're wrong, your final score was: {score}")
+            print(f"Sorry you're wrong, your final score wasa: {score}")
             break
 
 runner(logo, vs, game_state)
