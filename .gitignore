@@ -2,3 +2,13 @@
 #See: https://stackoverflow.com/questions/18393498/gitignore-all-the-ds-store-files-in-every-folder-and-subfolder
 #Find&remove old .DS_Store files using command find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch
 .DS_Store
+.idea
+__pycache__
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
