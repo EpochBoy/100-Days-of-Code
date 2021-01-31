@@ -37,7 +37,6 @@ from random import *
 
 hirst = Turtle(visible=False)
 screen = Screen()
-screen.colormode(1)
 screen.colormode(255)
 screen.screensize(400, 400)
 hirst.speed(40)
